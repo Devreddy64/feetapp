@@ -48,7 +48,7 @@ public class RoleService {
     public void unassignRole(Integer userId, Integer roleId){
         User user = userRepository.findById(userId).orElse(null);
         Set<Role> userRoles = user.getRoles();
-        userRoles.removeIf(x -> x.getId() == roleId);
+     //   userRoles.removeIf(x -> x.getId() == roleId);
         user.setRoles(userRoles);
         userRepository.save(user);
     }
